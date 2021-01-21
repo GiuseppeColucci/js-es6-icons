@@ -7,24 +7,42 @@ $(document).ready(function(){
 - Utilizzando la funzione forEach e il template literal, visualizzare in pagina tutte le icone con il proprio nome.
  */
 const boxIcon=[
-    {name:'cat', prefisso:'fas', tipo:'fa-cat', family:'animals'},
-    {name:'cat', prefisso:'fas', tipo:'fa-cat', family:'animals'},
-    {name:'cat', prefisso:'fas', tipo:'fa-cat', family:'animals'},
-    {name:'cat', prefisso:'fas', tipo:'fa-cat', family:'animals'},
-    {name:'cat', prefisso:'fas', tipo:'fa-cat', family:'animals'},
-    {name:'cat', prefisso:'fas', tipo:'fa-cat', family:'animals'},
-    {name:'cat', prefisso:'fas', tipo:'fa-cat', family:'animals'},
-    {name:'cat', prefisso:'fas', tipo:'fa-cat', family:'animals'},
+    {name:'cat', prefisso:'fa', tipo:'animals', family:'fas'},
+    {name:'dog', prefisso:'fa', tipo:'animals', family:'fas'},
+    {name:'lemon', prefisso:'fa', tipo:'fruit', family:'fas'},
+    {name:'carrot', prefisso:'fa', tipo:'fruit', family:'fas'},
+    {name:'user-ninja', prefisso:'fa', tipo:'uman', family:'fas'},
+    {name:'user-astronaut', prefisso:'fa', tipo:'uman', family:'fas'},
+   
     
 
 ];
+let icons=document.getElementById('rew');
+
 boxIcon.forEach((element)=>{
-    let icons=document.getElementById('rew');
+    const{name,prefisso,tipo,family}=element
     icons.innerHTML+=`
     <div>
-    <i class="fas fa-cat"></i>
-    ${element.name}
+    <i class="${family} ${prefisso}-${name}"></i>
+    ${tipo}
     </div>
 
     `
-})
+});
+/**
+ * Milestone 2:
+- Definire un array di colori e associare ad ogni tipo di icona un colore.
+- Visualizzare le icone di colore diverso in base al tipo.
+ */
+
+ const color=['red','blue','orange']
+ 
+ const colorIconAnimal=boxIcon.filter((element)=>{
+  return element.tipo==='animals'
+ });
+ const colorIconFruit=boxIcon.filter((element)=>{
+    return element.tipo==='fruit'
+   });
+   const colorIconUman=boxIcon.filter((element)=>{
+    return element.tipo==='uman'
+   });
