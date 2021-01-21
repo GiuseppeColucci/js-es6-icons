@@ -36,13 +36,22 @@ boxIcon.forEach((element)=>{
  */
 
  const color=['red','blue','orange']
+
+ const value=[];
+ boxIcon.forEach((element)=>{
+     if(!element.tipo.includes(value)){
+         value.push(element)
+     }
+     return value
+    })
+    console.log(value)
  
- const colorIconAnimal=boxIcon.filter((element)=>{
-  return element.tipo==='animals'
- });
- const colorIconFruit=boxIcon.filter((element)=>{
-    return element.tipo==='fruit'
-   });
-   const colorIconUman=boxIcon.filter((element)=>{
-    return element.tipo==='uman'
-   });
+//  const colorIconAnimal=boxIcon.filter((element)=>{
+//   return element.tipo==='animals'
+//  });
+//  const colorIconFruit=boxIcon.filter((element)=>{
+//     return element.tipo==='fruit'
+//    });
+//    const colorIconUman=boxIcon.filter((element)=>{
+//     return element.tipo==='uman'
+//    });
