@@ -39,19 +39,17 @@ boxIcon.forEach((element)=>{
 
  const value=[];
  boxIcon.forEach((element)=>{
-     if(!element.tipo.includes(value)){
-         value.push(element)
+     if(!value.includes(element.tipo)){
+         value.push(element.tipo)
      }
-     return value
-    })
-    console.log(value)
+     
+    });
+boxIcon.forEach((element)=>{
+    const index=value.indexOf(element.tipo);
+    if(index != -1){
+        element.color=colors[index]
+    }
+})
+    
  
-//  const colorIconAnimal=boxIcon.filter((element)=>{
-//   return element.tipo==='animals'
-//  });
-//  const colorIconFruit=boxIcon.filter((element)=>{
-//     return element.tipo==='fruit'
-//    });
-//    const colorIconUman=boxIcon.filter((element)=>{
-//     return element.tipo==='uman'
-//    });
+
